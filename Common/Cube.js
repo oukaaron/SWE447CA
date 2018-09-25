@@ -18,7 +18,10 @@ function Cube( vertexShaderId, fragmentShaderId ) {
 
     this.positions = { 
         values : new Float32Array([
-           // Add your list vertex positions here
+           0.0,0.0,0.0,
+           0.5,0.0,0.0,
+           0.0,0.5,0.0,
+           0.0,0.5,0.0,
             ]),
         numComponents : 3
     };
