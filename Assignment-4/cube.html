@@ -11,21 +11,26 @@
 <script src="cube.js"></script>
 
 <script id="Cube-vertex-shader" type="x-shader/x-vertex">
+attribute vec3 vColors;
 attribute vec4 vPosition;
-
+varying vec4 fColor;
 uniform mat4 MV;
-
 void main()
 {
+	fColor = vec4(vColors, 1.0);
     gl_PointSize = 5.0;
     gl_Position = MV * vPosition;
 }
 </script>
 
 <script id="Cube-fragment-shader" type="x-shader/x-fragment">
+precision highp float;
+varying vec4 fColor;
 void main()
 {
-    gl_FragColor = vec4(1.0, 0.0, gl_FrontFacing ? 1.0 : 0.0, 1.0);
+	//fColor = vec4(vColors, 1.0);
+	gl_FragColor = vec4(fColor);
+    //gl_FragColor = vec4(0.4, 0.0, gl_FrontFacing ? 0.8 : 0.0, 0.8);
 }
 </script>
 </head>
