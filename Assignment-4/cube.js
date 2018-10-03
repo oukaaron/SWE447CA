@@ -1,4 +1,3 @@
-
 var cube = undefined;
 var gl = undefined;
 var angle = 0;
